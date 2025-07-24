@@ -61,6 +61,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				gold: {
+					DEFAULT: '#D4AF37',
+					light: '#F4E37D',
+					dark: '#B8860B'
+				},
+				brown: {
+					DEFAULT: '#8B4513',
+					light: '#CD853F',
+					dark: '#654321'
+				},
+				slate: {
+					DEFAULT: '#2F4F4F',
+					light: '#708090',
+					dark: '#1C3A3A'
+				},
+				cream: {
+					DEFAULT: '#F5F5DC',
+					light: '#FEFEF5',
+					dark: '#E5E5CC'
 				}
 			},
 			borderRadius: {
@@ -88,7 +108,19 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fadeIn 0.6s ease-out',
+				'scale-in': 'scaleIn 0.3s ease-out'
+			},
+			keyframes: {
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				scaleIn: {
+					'0%': { transform: 'scale(0.95)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				}
 			}
 		}
 	},
