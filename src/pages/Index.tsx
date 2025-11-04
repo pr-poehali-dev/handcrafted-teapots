@@ -7,6 +7,7 @@ import Icon from '@/components/ui/icon';
 import ChinesePattern from '@/components/ChinesePattern';
 import CloudPattern from '@/components/CloudPattern';
 import ClayTexture from '@/components/ClayTexture';
+import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 const Index = () => {
   const [selectedTeapot, setSelectedTeapot] = useState<any>(null);
@@ -136,6 +137,8 @@ const Index = () => {
                   <div className="text-sm text-gold-light/70 font-body">Ручная работа</div>
                 </div>
               </div>
+
+              <TestimonialsSlider />
             </div>
 
             <div className="relative animate-scale-in">
