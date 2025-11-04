@@ -56,10 +56,8 @@ const Index = () => {
   const navigation = [
     { name: "Главная", href: "#", current: true },
     { name: "Каталог", href: "#catalog" },
-    { name: "О мастерах", href: "#masters" },
-    { name: "Доставка", href: "#delivery" },
-    { name: "Контакты", href: "#contacts" },
-    { name: "Блог", href: "#blog" }
+    { name: "О керамике", href: "#about" },
+    { name: "Контакты", href: "#contacts" }
   ];
 
   return (
