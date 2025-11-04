@@ -74,7 +74,7 @@ const Index = () => {
               <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
                 <span className="text-white text-lg">茶</span>
               </div>
-              <span className="font-serif text-xl font-semibold text-gold">Премиум Чайники</span>
+              <span className="font-serif text-xl font-semibold text-gold">Исинская чайная керамика Цзыша</span>
             </div>
             
             <div className="hidden md:flex space-x-8">
