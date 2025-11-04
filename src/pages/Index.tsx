@@ -65,7 +65,6 @@ const Index = () => {
   return (
     <div className="min-h-screen relative" style={{backgroundColor: '#5C3A31'}}>
       <ClayTexture />
-      <ChinesePattern />
       
       {/* Navigation */}
       <nav className="relative z-10 border-b border-gold/20" style={{backgroundColor: '#6B4238'}}>
@@ -103,7 +102,6 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative py-20 z-10" style={{background: 'linear-gradient(to bottom right, #7A4F42, #5C3A31)'}}>
-        <CloudPattern />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
@@ -165,21 +163,6 @@ const Index = () => {
 
       {/* Featured Products */}
       <section id="catalog" className="py-20 relative z-10">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 right-10 w-32 h-32 text-gold/10">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
-              <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="1"/>
-              <path d="M 50 5 L 50 95 M 5 50 L 95 50" stroke="currentColor" strokeWidth="1"/>
-              <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="1"/>
-            </svg>
-          </div>
-          <div className="absolute bottom-20 left-10 w-24 h-24 text-gold/10">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
-              <path d="M 20 50 Q 35 20, 50 50 T 80 50" fill="none" stroke="currentColor" strokeWidth="2"/>
-              <path d="M 20 50 Q 35 80, 50 50 T 80 50" fill="none" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-          </div>
-        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl font-bold text-slate-dark mb-4">
