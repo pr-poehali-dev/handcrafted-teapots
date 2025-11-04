@@ -153,8 +153,8 @@ const Index = () => {
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-gold text-white p-4 rounded-lg shadow-lg">
-                <div className="text-sm font-body">От</div>
-                <div className="text-2xl font-bold font-serif">25 000 ₽</div>
+                <div className="text-sm font-body">Цена</div>
+                <div className="text-lg font-bold font-serif">по запросу</div>
               </div>
             </div>
           </div>
@@ -198,8 +198,8 @@ const Index = () => {
                     </p>
                     
                     <div className="flex items-center justify-between pt-4 border-t border-gold/10">
-                      <span className="font-serif text-2xl font-bold text-gold">
-                        {teapot.price}
+                      <span className="font-serif text-base text-gold-light">
+                        Цена по запросу
                       </span>
                       
                       <div className="flex gap-2">
