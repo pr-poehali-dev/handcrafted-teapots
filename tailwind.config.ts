@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'calligraphy': ['"Ma Shan Zheng"', 'cursive'],
+				'chinese': ['"ZCOOL XiaoWei"', 'serif'],
+				'serif': ['"Noto Serif SC"', 'serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
