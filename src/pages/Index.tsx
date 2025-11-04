@@ -210,64 +210,63 @@ const Index = () => {
                             Подробнее
                           </Button>
                         </DialogTrigger>
-                          <DialogContent className="max-w-4xl">
-                            {selectedTeapot && (
-                              <div className="grid md:grid-cols-2 gap-6">
-                                <div className="space-y-4">
-                                  <div className="aspect-square overflow-hidden rounded-lg">
-                                    <img 
-                                      src={selectedTeapot.gallery[0]} 
-                                      alt={selectedTeapot.name}
-                                      className="w-full h-full object-cover"
-                                    />
-                                  </div>
-                                  <div className="grid grid-cols-3 gap-2">
-                                    {selectedTeapot.gallery.map((img: string, idx: number) => (
-                                      <div key={idx} className="aspect-square overflow-hidden rounded border-2 border-gold/20">
-                                        <img 
-                                          src={img} 
-                                          alt={`${selectedTeapot.name} вид ${idx + 1}`}
-                                          className="w-full h-full object-cover cursor-pointer hover:opacity-75 transition-opacity"
-                                        />
-                                      </div>
-                                    ))}
-                                  </div>
+                        <DialogContent className="max-w-4xl">
+                          {selectedTeapot && (
+                            <div className="grid md:grid-cols-2 gap-6">
+                              <div className="space-y-4">
+                                <div className="aspect-square overflow-hidden rounded-lg">
+                                  <img 
+                                    src={selectedTeapot.gallery[0]} 
+                                    alt={selectedTeapot.name}
+                                    className="w-full h-full object-cover"
+                                  />
                                 </div>
-                                
-                                <div className="space-y-6">
-                                  <div>
-                                    <h3 className="font-serif text-3xl font-bold text-foreground mb-2">
-                                      {selectedTeapot.name}
-                                    </h3>
-                                    <p className="text-gold font-medium font-body text-lg">
-                                      {selectedTeapot.masterwork}
-                                    </p>
-                                  </div>
-                                  
-                                  <p className="text-muted-foreground font-body leading-relaxed">
-                                    {selectedTeapot.description}
-                                  </p>
-                                  
-                                  <div className="space-y-4">
-                                    <div className="text-center py-3 px-4 bg-gold/10 rounded border border-gold/30">
-                                      <span className="font-serif text-lg text-gold">Цена по запросу</span>
+                                <div className="grid grid-cols-3 gap-2">
+                                  {selectedTeapot.gallery.map((img: string, idx: number) => (
+                                    <div key={idx} className="aspect-square overflow-hidden rounded border-2 border-gold/20">
+                                      <img 
+                                        src={img} 
+                                        alt={`${selectedTeapot.name} вид ${idx + 1}`}
+                                        className="w-full h-full object-cover cursor-pointer hover:opacity-75 transition-opacity"
+                                      />
                                     </div>
-                                    
-                                    <Badge className="bg-gold/10 text-gold border-gold/20 w-full justify-center py-2">
-                                      Ручная работа мастера
-                                    </Badge>
-                                    
-                                    <Button className="w-full bg-gold hover:bg-gold-dark text-white">
-                                      <Icon name="MessageCircle" size={18} className="mr-2" />
-                                      Запросить цену
-                                    </Button>
-                                  </div>
+                                  ))}
                                 </div>
                               </div>
-                            )}
-                          </DialogContent>
-                        </Dialog>
-                      </div>
+                              
+                              <div className="space-y-6">
+                                <div>
+                                  <h3 className="font-serif text-3xl font-bold text-foreground mb-2">
+                                    {selectedTeapot.name}
+                                  </h3>
+                                  <p className="text-gold font-medium font-body text-lg">
+                                    {selectedTeapot.masterwork}
+                                  </p>
+                                </div>
+                                
+                                <p className="text-muted-foreground font-body leading-relaxed">
+                                  {selectedTeapot.description}
+                                </p>
+                                
+                                <div className="space-y-4">
+                                  <div className="text-center py-3 px-4 bg-gold/10 rounded border border-gold/30">
+                                    <span className="font-serif text-lg text-gold">Цена по запросу</span>
+                                  </div>
+                                  
+                                  <Badge className="bg-gold/10 text-gold border-gold/20 w-full justify-center py-2">
+                                    Ручная работа мастера
+                                  </Badge>
+                                  
+                                  <Button className="w-full bg-gold hover:bg-gold-dark text-white">
+                                    <Icon name="MessageCircle" size={18} className="mr-2" />
+                                    Запросить цену
+                                  </Button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </div>
                 </CardContent>
