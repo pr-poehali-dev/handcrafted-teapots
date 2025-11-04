@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import Icon from '@/components/ui/icon';
 import ChinesePattern from '@/components/ChinesePattern';
 import CloudPattern from '@/components/CloudPattern';
+import ClayTexture from '@/components/ClayTexture';
 
 const Index = () => {
   const [selectedTeapot, setSelectedTeapot] = useState<any>(null);
@@ -63,6 +64,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative" style={{backgroundColor: '#5C3A31'}}>
+      <ClayTexture />
       <ChinesePattern />
       
       {/* Navigation */}
