@@ -75,7 +75,7 @@ const Index = () => {
               <span className="font-serif text-xl font-semibold text-gold">Исинская чайная керамика Цзыша</span>
             </div>
             
-            <div className="hidden md:flex space-x-8">
+            <div className="flex space-x-8">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -90,10 +90,6 @@ const Index = () => {
                 </a>
               ))}
             </div>
-
-            <Button className="bg-gold hover:bg-gold-dark text-white">
-              Корзина (0)
-            </Button>
           </div>
         </div>
       </nav>
