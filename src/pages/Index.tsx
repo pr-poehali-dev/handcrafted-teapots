@@ -62,11 +62,11 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-cream-light relative">
+    <div className="min-h-screen relative" style={{backgroundColor: '#5C3A31'}}>
       <ChinesePattern />
       
       {/* Navigation */}
-      <nav className="bg-cream border-b border-gold/20 relative z-10">
+      <nav className="relative z-10 border-b border-gold/20" style={{backgroundColor: '#6B4238'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
@@ -100,7 +100,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-cream to-cream-dark z-10">
+      <section className="relative py-20 z-10" style={{background: 'linear-gradient(to bottom right, #7A4F42, #5C3A31)'}}>
         <CloudPattern />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -191,7 +191,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teapots.map((teapot, index) => (
-              <Card key={teapot.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 bg-white border-gold/10 group animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
+              <Card key={teapot.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-gold/20 group animate-fade-in" style={{animationDelay: `${index * 0.2}s`, backgroundColor: '#6B4238'}}>
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={teapot.image} 
