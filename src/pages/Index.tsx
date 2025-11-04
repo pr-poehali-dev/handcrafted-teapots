@@ -185,34 +185,31 @@ const Index = () => {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <div>
-                      <h3 className="font-serif text-xl font-semibold text-gold-light">
+                      <h3 className="font-serif text-2xl font-bold text-gold mb-2">
                         {teapot.name}
                       </h3>
-                      <p className="text-gold font-medium font-body">{teapot.masterwork}</p>
+                      <p className="text-gold-light/80 font-body text-sm mb-3">{teapot.masterwork}</p>
                     </div>
                     
-                    <p className="text-gold-light/70 font-body text-sm leading-relaxed">
+                    <p className="text-gold-light/70 font-body text-sm leading-relaxed line-clamp-3">
                       {teapot.description}
                     </p>
                     
-                    <div className="flex items-center justify-between pt-4 border-t border-gold/10">
-                      <span className="font-serif text-base text-gold-light">
-                        Цена по запросу
-                      </span>
+                    <div className="pt-4 space-y-3">
+                      <div className="text-center py-2 px-4 bg-gold/10 rounded border border-gold/20">
+                        <span className="font-serif text-sm text-gold">Цена по запросу</span>
+                      </div>
                       
-                      <div className="flex gap-2">
-                        <Dialog>
-                          <DialogTrigger asChild>
-                            <Button 
-                              size="sm" 
-                              variant="outline" 
-                              className="border-gold text-gold hover:bg-gold hover:text-white"
-                              onClick={() => setSelectedTeapot(teapot)}
-                            >
-                              <Icon name="Eye" size={16} className="mr-1" />
-                              Смотреть
-                            </Button>
-                          </DialogTrigger>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button 
+                            className="w-full bg-gold hover:bg-gold-dark text-white"
+                            onClick={() => setSelectedTeapot(teapot)}
+                          >
+                            <Icon name="Eye" size={18} className="mr-2" />
+                            Подробнее
+                          </Button>
+                        </DialogTrigger>
                           <DialogContent className="max-w-4xl">
                             {selectedTeapot && (
                               <div className="grid md:grid-cols-2 gap-6">
@@ -239,7 +236,7 @@ const Index = () => {
                                 
                                 <div className="space-y-6">
                                   <div>
-                                    <h3 className="font-serif text-3xl font-bold text-slate-dark mb-2">
+                                    <h3 className="font-serif text-3xl font-bold text-foreground mb-2">
                                       {selectedTeapot.name}
                                     </h3>
                                     <p className="text-gold font-medium font-body text-lg">
@@ -247,23 +244,22 @@ const Index = () => {
                                     </p>
                                   </div>
                                   
-                                  <p className="text-slate-light font-body leading-relaxed">
+                                  <p className="text-muted-foreground font-body leading-relaxed">
                                     {selectedTeapot.description}
                                   </p>
                                   
                                   <div className="space-y-4">
-                                    <div className="flex items-center justify-between">
-                                      <span className="font-serif text-3xl font-bold text-slate-dark">
-                                        {selectedTeapot.price}
-                                      </span>
-                                      <Badge className="bg-gold/10 text-gold border-gold/20">
-                                        Единственный экземпляр
-                                      </Badge>
+                                    <div className="text-center py-3 px-4 bg-gold/10 rounded border border-gold/30">
+                                      <span className="font-serif text-lg text-gold">Цена по запросу</span>
                                     </div>
                                     
+                                    <Badge className="bg-gold/10 text-gold border-gold/20 w-full justify-center py-2">
+                                      Ручная работа мастера
+                                    </Badge>
+                                    
                                     <Button className="w-full bg-gold hover:bg-gold-dark text-white">
-                                      <Icon name="ShoppingCart" size={16} className="mr-2" />
-                                      Добавить в корзину
+                                      <Icon name="MessageCircle" size={18} className="mr-2" />
+                                      Запросить цену
                                     </Button>
                                   </div>
                                 </div>
@@ -271,11 +267,6 @@ const Index = () => {
                             )}
                           </DialogContent>
                         </Dialog>
-                        
-                        <Button size="sm" className="bg-gold hover:bg-gold-dark text-white">
-                          <Icon name="ShoppingCart" size={16} className="mr-1" />
-                          В корзину
-                        </Button>
                       </div>
                     </div>
                   </div>
