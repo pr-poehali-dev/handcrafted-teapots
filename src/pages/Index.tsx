@@ -74,7 +74,7 @@ const Index = () => {
               <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
                 <span className="text-white text-lg">茶</span>
               </div>
-              <span className="font-serif text-xl font-semibold text-slate-dark">Премиум Чайники</span>
+              <span className="font-serif text-xl font-semibold text-gold">Премиум Чайники</span>
             </div>
             
             <div className="hidden md:flex space-x-8">
@@ -85,7 +85,7 @@ const Index = () => {
                   className={`${
                     item.current
                       ? 'text-gold font-medium'
-                      : 'text-slate hover:text-gold'
+                      : 'text-gold-light hover:text-gold'
                   } transition-colors duration-200 font-body`}
                 >
                   {item.name}
@@ -109,11 +109,11 @@ const Index = () => {
                 <Badge className="bg-gold/10 text-gold border-gold/20 mb-4">
                   Ручная работа мастеров
                 </Badge>
-                <h1 className="font-serif text-5xl lg:text-6xl font-bold text-slate-dark leading-tight">
+                <h1 className="font-serif text-5xl lg:text-6xl font-bold text-gold-light leading-tight">
                   Китайские чайники
                   <span className="text-gold block">премиум класса</span>
                 </h1>
-                <p className="text-xl text-slate-light mt-6 font-body">
+                <p className="text-xl text-gold-light/80 mt-6 font-body">
                   Каждый чайник создается вручную мастерами с многолетним опытом. 
                   Уникальные произведения искусства для настоящих ценителей чайной культуры.
                 </p>
@@ -130,16 +130,16 @@ const Index = () => {
 
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gold/20">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-dark font-serif">50+</div>
-                  <div className="text-sm text-slate-light font-body">Уникальных моделей</div>
+                  <div className="text-2xl font-bold text-gold font-serif">50+</div>
+                  <div className="text-sm text-gold-light/70 font-body">Уникальных моделей</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-dark font-serif">15</div>
-                  <div className="text-sm text-slate-light font-body">Лет опыта</div>
+                  <div className="text-2xl font-bold text-gold font-serif">15</div>
+                  <div className="text-sm text-gold-light/70 font-body">Лет опыта</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-dark font-serif">100%</div>
-                  <div className="text-sm text-slate-light font-body">Ручная работа</div>
+                  <div className="text-2xl font-bold text-gold font-serif">100%</div>
+                  <div className="text-sm text-gold-light/70 font-body">Ручная работа</div>
                 </div>
               </div>
             </div>
@@ -165,10 +165,10 @@ const Index = () => {
       <section id="catalog" className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-slate-dark mb-4">
+            <h2 className="font-serif text-4xl font-bold text-gold mb-4">
               Избранные произведения
             </h2>
-            <p className="text-xl text-slate-light font-body max-w-2xl mx-auto">
+            <p className="text-xl text-gold-light/80 font-body max-w-2xl mx-auto">
               Каждый чайник в нашей коллекции — это результат многодневной работы мастера 
               и воплощение тысячелетних традиций китайского искусства.
             </p>
@@ -187,18 +187,18 @@ const Index = () => {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <div>
-                      <h3 className="font-serif text-xl font-semibold text-slate-dark">
+                      <h3 className="font-serif text-xl font-semibold text-gold-light">
                         {teapot.name}
                       </h3>
                       <p className="text-gold font-medium font-body">{teapot.masterwork}</p>
                     </div>
                     
-                    <p className="text-slate-light font-body text-sm leading-relaxed">
+                    <p className="text-gold-light/70 font-body text-sm leading-relaxed">
                       {teapot.description}
                     </p>
                     
                     <div className="flex items-center justify-between pt-4 border-t border-gold/10">
-                      <span className="font-serif text-2xl font-bold text-slate-dark">
+                      <span className="font-serif text-2xl font-bold text-gold">
                         {teapot.price}
                       </span>
                       
