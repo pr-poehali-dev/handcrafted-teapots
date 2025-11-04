@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import Icon from '@/components/ui/icon';
+import ChinesePattern from '@/components/ChinesePattern';
+import CloudPattern from '@/components/CloudPattern';
 
 const Index = () => {
   const [selectedTeapot, setSelectedTeapot] = useState<any>(null);
@@ -60,9 +62,11 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-cream-light">
+    <div className="min-h-screen bg-cream-light relative">
+      <ChinesePattern />
+      
       {/* Navigation */}
-      <nav className="bg-cream border-b border-gold/20">
+      <nav className="bg-cream border-b border-gold/20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
@@ -96,7 +100,8 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-cream to-cream-dark">
+      <section className="relative py-20 bg-gradient-to-br from-cream to-cream-dark z-10">
+        <CloudPattern />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
@@ -157,8 +162,23 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section id="catalog" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="catalog" className="py-20 relative z-10">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 right-10 w-32 h-32 text-gold/10">
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="1"/>
+              <path d="M 50 5 L 50 95 M 5 50 L 95 50" stroke="currentColor" strokeWidth="1"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="1"/>
+            </svg>
+          </div>
+          <div className="absolute bottom-20 left-10 w-24 h-24 text-gold/10">
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              <path d="M 20 50 Q 35 20, 50 50 T 80 50" fill="none" stroke="currentColor" strokeWidth="2"/>
+              <path d="M 20 50 Q 35 80, 50 50 T 80 50" fill="none" stroke="currentColor" strokeWidth="2"/>
+            </svg>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl font-bold text-slate-dark mb-4">
               Избранные произведения
