@@ -28,10 +28,10 @@ const Master = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-serif text-5xl lg:text-6xl font-bold text-gold mb-6">
-              Мастер Чжан Вэй
+              Глеб Николаевич Музрукова
             </h1>
             <p className="text-xl text-gold-light/80 font-body max-w-3xl mx-auto">
-              Носитель древних традиций, хранитель секретов исинской глины
+              Мастер керамики, исследователь традиций исинского гончарства
             </p>
           </div>
 
@@ -40,7 +40,7 @@ const Master = () => {
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/img/187c4e8c-36aa-4e91-8642-8b0ed3180909.jpg"
-                  alt="Мастер Чжан Вэй"
+                  alt="Глеб Николаевич Музрукова"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -53,9 +53,10 @@ const Master = () => {
                   <div>
                     <h3 className="font-serif text-2xl font-bold text-gold mb-2">Путь мастера</h3>
                     <p className="text-gold-light/80 font-body leading-relaxed">
-                      Более 40 лет посвятил искусству создания чайников из исинской глины. 
-                      Обучался у великих мастеров в провинции Цзянсу, изучая тонкости 
-                      работы с цзыша и формирования идеальных форм.
+                      Глеб Николаевич посвятил более 15 лет изучению и практике китайского 
+                      гончарного искусства. Глубоко исследовал традиции работы с исинской глиной цзыша, 
+                      постигая секреты древних мастеров провинции Цзянсу и адаптируя их методы 
+                      для создания уникальных авторских работ.
                     </p>
                   </div>
                 </div>
@@ -67,9 +68,10 @@ const Master = () => {
                   <div>
                     <h3 className="font-serif text-2xl font-bold text-gold mb-2">Философия</h3>
                     <p className="text-gold-light/80 font-body leading-relaxed">
-                      «Каждый чайник – это диалог между мастером и глиной. Я не создаю форму, 
-                      я лишь помогаю ей проявиться. Настоящее мастерство в том, чтобы чувствовать 
-                      душу материала и следовать за ней.»
+                      «Работа с исинской глиной — это не просто ремесло, это медитация и диалог 
+                      с материалом. Каждый чайник несёт в себе частичку древней китайской философии, 
+                      соединяя традиции Востока с современным пониманием формы и функции. 
+                      Я стремлюсь создавать не просто посуду, а проводники чайной церемонии.»
                     </p>
                   </div>
                 </div>
@@ -79,23 +81,27 @@ const Master = () => {
                 <div className="flex items-start gap-4 mb-6">
                   <Icon name="Medal" size={32} className="text-gold flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-gold mb-2">Достижения</h3>
+                    <h3 className="font-serif text-2xl font-bold text-gold mb-2">Достижения и опыт</h3>
                     <ul className="space-y-3 text-gold-light/80 font-body">
                       <li className="flex items-start gap-2">
                         <Icon name="Check" size={20} className="text-gold flex-shrink-0 mt-0.5" />
-                        <span>Лауреат национальной премии за вклад в керамическое искусство (2018)</span>
+                        <span>Автор коллекции исинских чайников премиум-класса</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Icon name="Check" size={20} className="text-gold flex-shrink-0 mt-0.5" />
-                        <span>Работы представлены в музее керамики Цзиндэчжэнь</span>
+                        <span>Исследователь традиционных техник работы с глиной цзыша</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Icon name="Check" size={20} className="text-gold flex-shrink-0 mt-0.5" />
-                        <span>Мастер высшей категории гильдии гончаров Исин</span>
+                        <span>Пропагандист китайской чайной культуры</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Icon name="Check" size={20} className="text-gold flex-shrink-0 mt-0.5" />
-                        <span>Обучил более 20 учеников за свою карьеру</span>
+                        <span>Создатель уникальных авторских моделей</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Icon name="Check" size={20} className="text-gold flex-shrink-0 mt-0.5" />
+                        <span>Организатор мастер-классов по чайной керамике</span>
                       </li>
                     </ul>
                   </div>
@@ -106,16 +112,16 @@ const Master = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <div className="bg-gold/5 border border-gold/20 rounded-lg p-8 text-center animate-scale-in">
-              <div className="text-5xl font-bold text-gold font-serif mb-2">40+</div>
-              <div className="text-gold-light/70 font-body">Лет опыта</div>
+              <div className="text-5xl font-bold text-gold font-serif mb-2">15+</div>
+              <div className="text-gold-light/70 font-body">Лет изучения традиций</div>
             </div>
             <div className="bg-gold/5 border border-gold/20 rounded-lg p-8 text-center animate-scale-in" style={{animationDelay: '0.1s'}}>
-              <div className="text-5xl font-bold text-gold font-serif mb-2">500+</div>
-              <div className="text-gold-light/70 font-body">Созданных чайников</div>
+              <div className="text-5xl font-bold text-gold font-serif mb-2">50+</div>
+              <div className="text-gold-light/70 font-body">Уникальных моделей</div>
             </div>
             <div className="bg-gold/5 border border-gold/20 rounded-lg p-8 text-center animate-scale-in" style={{animationDelay: '0.2s'}}>
-              <div className="text-5xl font-bold text-gold font-serif mb-2">15</div>
-              <div className="text-gold-light/70 font-body">Международных наград</div>
+              <div className="text-5xl font-bold text-gold font-serif mb-2">100%</div>
+              <div className="text-gold-light/70 font-body">Ручная работа</div>
             </div>
           </div>
 
