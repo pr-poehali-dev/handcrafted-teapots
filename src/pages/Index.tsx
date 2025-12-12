@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,6 +11,7 @@ import ClayTexture from '@/components/ClayTexture';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [selectedTeapot, setSelectedTeapot] = useState<any>(null);
 
   const teapots = [
@@ -57,7 +59,9 @@ const Index = () => {
   const navigation = [
     { name: "Главная", href: "#", current: true },
     { name: "Каталог", href: "#catalog" },
-    { name: "О керамике", href: "#about" },
+    { name: "О мастере", href: "/master", isRoute: true },
+    { name: "Техники", href: "/techniques", isRoute: true },
+    { name: "Блог", href: "/blog", isRoute: true },
     { name: "Контакты", href: "#contacts" }
   ];
 
@@ -78,17 +82,27 @@ const Index = () => {
             
             <div className="flex space-x-8">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={`${
-                    item.current
-                      ? 'text-gold font-medium'
-                      : 'text-gold-light hover:text-gold'
-                  } transition-colors duration-200 font-body`}
-                >
-                  {item.name}
-                </a>
+                item.isRoute ? (
+                  <button
+                    key={item.name}
+                    onClick={() => navigate(item.href)}
+                    className="text-gold-light hover:text-gold transition-colors duration-200 font-body"
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`${
+                      item.current
+                        ? 'text-gold font-medium'
+                        : 'text-gold-light hover:text-gold'
+                    } transition-colors duration-200 font-body`}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -115,11 +129,11 @@ const Index = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gold hover:bg-gold-dark text-white px-8">
+                <Button size="lg" className="bg-gold hover:bg-gold-dark text-white px-8" onClick={() => document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' })}>
                   Смотреть каталог
                 </Button>
-                <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
-                  О мастерах
+                <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white" onClick={() => navigate('/master')}>
+                  О мастере
                 </Button>
               </div>
 
