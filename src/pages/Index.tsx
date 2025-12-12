@@ -13,6 +13,7 @@ import TestimonialsSlider from '@/components/TestimonialsSlider';
 const Index = () => {
   const navigate = useNavigate();
   const [selectedTeapot, setSelectedTeapot] = useState<any>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const teapots = [
     {
@@ -74,13 +75,14 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-lg">茶</span>
               </div>
-              <span className="font-serif text-xl font-semibold text-gold">Исинская чайная керамика Цзыша</span>
+              <span className="font-serif text-sm sm:text-base lg:text-xl font-semibold text-gold line-clamp-1">Исинская чайная керамика Цзыша</span>
             </div>
             
-            <div className="flex space-x-8">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex space-x-8">
               {navigation.map((item) => (
                 item.isRoute ? (
                   <button
@@ -105,12 +107,54 @@ const Index = () => {
                 )
               ))}
             </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="lg:hidden text-gold p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Меню"
+            >
+              <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} />
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden py-4 space-y-2 border-t border-gold/20 mt-2">
+              {navigation.map((item) => (
+                item.isRoute ? (
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      navigate(item.href);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block w-full text-left py-2 px-4 text-gold-light hover:text-gold hover:bg-gold/10 transition-colors font-body"
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block py-2 px-4 ${
+                      item.current
+                        ? 'text-gold font-medium bg-gold/10'
+                        : 'text-gold-light hover:text-gold hover:bg-gold/10'
+                    } transition-colors font-body`}
+                  >
+                    {item.name}
+                  </a>
+                )
+              ))}
+            </div>
+          )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 z-10" style={{background: 'linear-gradient(to bottom right, #7A4F42, #5C3A31)'}}>
+      <section className="relative py-10 sm:py-16 lg:py-20 z-10" style={{background: 'linear-gradient(to bottom right, #7A4F42, #5C3A31)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
@@ -118,11 +162,11 @@ const Index = () => {
                 <Badge className="bg-gold/10 text-gold border-gold/20 mb-4">
                   Ручная работа мастеров
                 </Badge>
-                <h1 className="font-serif text-5xl lg:text-6xl font-bold text-gold-light leading-tight">
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gold-light leading-tight">
                   Китайские чайники
                   <span className="text-gold block">премиум класса</span>
                 </h1>
-                <p className="text-xl text-gold-light/80 mt-6 font-body">
+                <p className="text-base sm:text-lg lg:text-xl text-gold-light/80 mt-4 sm:mt-6 font-body">
                   Каждый чайник создается вручную мастерами с многолетним опытом. 
                   Уникальные произведения искусства для настоящих ценителей чайной культуры.
                 </p>
@@ -137,18 +181,18 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gold/20">
+              <div className="grid grid-cols-3 gap-3 sm:gap-8 pt-6 sm:pt-8 border-t border-gold/20">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gold font-serif">50+</div>
-                  <div className="text-sm text-gold-light/70 font-body">Уникальных моделей</div>
+                  <div className="text-xl sm:text-2xl font-bold text-gold font-serif">50+</div>
+                  <div className="text-xs sm:text-sm text-gold-light/70 font-body">Уникальных моделей</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gold font-serif">15</div>
-                  <div className="text-sm text-gold-light/70 font-body">Лет опыта</div>
+                  <div className="text-xl sm:text-2xl font-bold text-gold font-serif">15</div>
+                  <div className="text-xs sm:text-sm text-gold-light/70 font-body">Лет опыта</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gold font-serif">100%</div>
-                  <div className="text-sm text-gold-light/70 font-body">Ручная работа</div>
+                  <div className="text-xl sm:text-2xl font-bold text-gold font-serif">100%</div>
+                  <div className="text-xs sm:text-sm text-gold-light/70 font-body">Ручная работа</div>
                 </div>
               </div>
 
@@ -163,9 +207,9 @@ const Index = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-gold text-white p-4 rounded-lg shadow-lg">
-                <div className="text-sm font-body">Цена</div>
-                <div className="text-lg font-bold font-serif">по запросу</div>
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gold text-white p-3 sm:p-4 rounded-lg shadow-lg">
+                <div className="text-xs sm:text-sm font-body">Цена</div>
+                <div className="text-base sm:text-lg font-bold font-serif">по запросу</div>
               </div>
             </div>
           </div>
@@ -173,21 +217,21 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section id="catalog" className="py-20 relative z-10">
+      <section id="catalog" className="py-10 sm:py-16 lg:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-gold mb-4">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-gold mb-3 sm:mb-4">
               Избранные произведения
             </h2>
-            <p className="text-xl text-gold-light/80 font-body max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gold-light/80 font-body max-w-2xl mx-auto px-4">
               Каждый чайник в нашей коллекции — это результат многодневной работы мастера 
               и воплощение тысячелетних традиций китайского искусства.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {teapots.map((teapot, index) => (
-              <Card key={teapot.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-gold/20 group animate-fade-in" style={{animationDelay: `${index * 0.2}s`, backgroundColor: '#6B4238'}}>
+              <Card key={teapot.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-gold/20 group" style={{backgroundColor: '#6B4238'}}>
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={teapot.image} 
@@ -195,10 +239,10 @@ const Index = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <div className="space-y-4">
                     <div>
-                      <h3 className="font-serif text-2xl font-bold text-gold mb-2">
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-gold mb-2">
                         {teapot.name}
                       </h3>
                       <p className="text-gold-light/80 font-body text-sm mb-3">{teapot.masterwork}</p>
@@ -290,19 +334,19 @@ const Index = () => {
       </section>
 
       {/* Masters Section */}
-      <section id="masters" className="py-20 bg-cream">
+      <section id="masters" className="py-10 sm:py-16 lg:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-serif text-4xl font-bold text-slate-dark">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-dark">
                 Мастера своего дела
               </h2>
-              <p className="text-lg text-slate-light font-body leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-light font-body leading-relaxed">
                 Наши мастера изучали искусство создания керамики в древних мастерских Цзинчжэня — 
                 столицы китайского фарфора. Каждый чайник создается с соблюдением традиций, 
                 передающихся из поколения в поколение.
               </p>
-              <p className="text-lg text-slate-light font-body leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-light font-body leading-relaxed">
                 От выбора глины до финальной росписи — каждый этап контролируется мастером лично. 
                 Это гарантирует уникальность и высочайшее качество каждого изделия.
               </p>
@@ -323,41 +367,41 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section className="py-20">
+      <section className="py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto">
-                <Icon name="Award" size={32} className="text-gold" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="text-center space-y-3 sm:space-y-4">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto">
+                <Icon name="Award" size={28} className="text-gold sm:w-8 sm:h-8" />
               </div>
-              <h3 className="font-serif text-xl font-semibold text-slate-dark">
+              <h3 className="font-serif text-base sm:text-lg lg:text-xl font-semibold text-slate-dark">
                 Премиум качество
               </h3>
-              <p className="text-slate-light font-body">
+              <p className="text-sm sm:text-base text-slate-light font-body">
                 Каждый чайник проходит строгий контроль качества и создается только из лучших материалов
               </p>
             </div>
             
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto">
-                <Icon name="Truck" size={32} className="text-gold" />
+            <div className="text-center space-y-3 sm:space-y-4">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto">
+                <Icon name="Truck" size={28} className="text-gold sm:w-8 sm:h-8" />
               </div>
-              <h3 className="font-serif text-xl font-semibold text-slate-dark">
+              <h3 className="font-serif text-base sm:text-lg lg:text-xl font-semibold text-slate-dark">
                 Бережная доставка
               </h3>
-              <p className="text-slate-light font-body">
+              <p className="text-sm sm:text-base text-slate-light font-body">
                 Специальная упаковка и страхование обеспечивают безопасность при транспортировке
               </p>
             </div>
             
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto">
-                <Icon name="Shield" size={32} className="text-gold" />
+            <div className="text-center space-y-3 sm:space-y-4">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto">
+                <Icon name="Shield" size={28} className="text-gold sm:w-8 sm:h-8" />
               </div>
-              <h3 className="font-serif text-xl font-semibold text-slate-dark">
+              <h3 className="font-serif text-base sm:text-lg lg:text-xl font-semibold text-slate-dark">
                 Гарантия подлинности
               </h3>
-              <p className="text-slate-light font-body">
+              <p className="text-sm sm:text-base text-slate-light font-body">
                 Сертификат подлинности и гарантия качества на каждое изделие ручной работы
               </p>
             </div>
@@ -366,9 +410,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-dark text-cream py-16">
+      <footer className="bg-slate-dark text-cream py-10 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
@@ -382,7 +426,7 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="font-serif text-lg font-semibold mb-4">Каталог</h4>
+              <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">Каталог</h4>
               <ul className="space-y-2 font-body">
                 <li><a href="#" className="text-cream/70 hover:text-gold transition-colors">Традиционные чайники</a></li>
                 <li><a href="#" className="text-cream/70 hover:text-gold transition-colors">Коллекционные</a></li>

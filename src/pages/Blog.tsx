@@ -77,13 +77,13 @@ const Blog = () => {
         </div>
       </nav>
 
-      <section className="py-20 relative z-10">
+      <section className="py-10 sm:py-16 lg:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-gold mb-6">
+          <div className="text-center mb-10 sm:mb-16 animate-fade-in">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gold mb-4 sm:mb-6 px-4">
               Блог о чайной культуре
             </h1>
-            <p className="text-xl text-gold-light/80 font-body max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gold-light/80 font-body max-w-3xl mx-auto px-4">
               Погрузитесь в мир традиций, мастерства и философии китайского чаепития
             </p>
           </div>
@@ -106,7 +106,7 @@ const Blog = () => {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {articles.map((article, index) => (
               <Card 
                 key={index} 

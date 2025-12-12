@@ -24,18 +24,18 @@ const Master = () => {
         </div>
       </nav>
 
-      <section className="py-20 relative z-10">
+      <section className="py-10 sm:py-16 lg:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-gold mb-6">
+          <div className="text-center mb-10 sm:mb-16 animate-fade-in">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gold mb-4 sm:mb-6 px-4">
               Глеб Николаевич Музрукова
             </h1>
-            <p className="text-xl text-gold-light/80 font-body max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gold-light/80 font-body max-w-3xl mx-auto px-4">
               Мастер керамики, исследователь традиций исинского гончарства
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-12 items-start mb-12 sm:mb-20">
             <div className="space-y-6 animate-slide-in">
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
@@ -46,12 +46,12 @@ const Master = () => {
               </div>
             </div>
 
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-6 sm:space-y-8 animate-fade-in">
               <div className="bg-gold/5 border border-gold/20 rounded-lg p-8">
                 <div className="flex items-start gap-4 mb-6">
                   <Icon name="Award" size={32} className="text-gold flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-gold mb-2">Путь мастера</h3>
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-gold mb-2">Путь мастера</h3>
                     <p className="text-gold-light/80 font-body leading-relaxed">
                       Глеб Николаевич посвятил более 15 лет изучению и практике китайского 
                       гончарного искусства. Глубоко исследовал традиции работы с исинской глиной цзыша, 
