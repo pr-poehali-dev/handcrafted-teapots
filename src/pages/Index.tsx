@@ -59,7 +59,7 @@ const Index = () => {
 
   const navigation = [
     { name: "Главная", href: "#", current: true },
-    { name: "Каталог", href: "#catalog" },
+    { name: "Лавка", href: "#catalog" },
     { name: "О мастере", href: "/master", isRoute: true },
     { name: "Техники", href: "/techniques", isRoute: true },
     { name: "Блог", href: "/blog", isRoute: true },
@@ -174,7 +174,7 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-gold hover:bg-gold-dark text-white px-8" onClick={() => document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Смотреть каталог
+                  Смотреть лавку
                 </Button>
                 <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white" onClick={() => navigate('/master')}>
                   О мастере
@@ -426,7 +426,7 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">Каталог</h4>
+              <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">Лавка</h4>
               <ul className="space-y-2 font-body">
                 <li><a href="#" className="text-cream/70 hover:text-gold transition-colors">Традиционные чайники</a></li>
                 <li><a href="#" className="text-cream/70 hover:text-gold transition-colors">Коллекционные</a></li>
